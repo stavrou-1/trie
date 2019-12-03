@@ -8,14 +8,20 @@ function Trie(letter = '') {
 Trie.prototype = {
     add: function(word, node = this) {
         for (const letter of word) {
+            // Here we check if node.children[letter] already exists
+            // if it does we set each letter as a child node of its parent
             if (node.children[letter]) {
                 node = node.children[letter];
             } else {
+                // else the letters do not exist yet so we need to create
+                // a new parent node and trickle down
                 const newNode = new Trie(letter);
                 node.children[letter] = newNode;
                 node = newNode;
             }
         }
+      // after letter nodes are added we set isWord to true
+      // keep in mind that node.children is our current node
       node.isWord = true;
     },
     find: function(word, node = this) {
