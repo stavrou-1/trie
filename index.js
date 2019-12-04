@@ -36,7 +36,7 @@ Trie.prototype = {
                 // and assign node to each letter of the word as a child of the previous.
                 node = node.children[letter];
                 // value concatenates to form the entire word. so `a` + `p` + `p` + `l` + `e`
-                // will give us apple as the final `value`.
+                // will give us `apple` as the final value.
                 value += letter;
             }
         }
