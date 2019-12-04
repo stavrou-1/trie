@@ -64,7 +64,8 @@ Trie.prototype = {
             }
         }
         
-        if (Object.keys(node.children).length) { // if any children, we should only change isWord flag
+        // if node has children, we should only change isWord flag
+        if (Object.keys(node.children).length) {
             node.isWord = false;
             return node;
         }
